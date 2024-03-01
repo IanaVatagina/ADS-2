@@ -3,11 +3,16 @@
 
 
 double pown(double value, uint16_t n) {
-    long double result = 1;
-    for (uint64_t i=1; i <= n; i++) {
-        result *= value;
+    if (n == 0) {
+        return 1;
+    } else if (n == 1) {
+        return value;
+    } else {
+        for (uint64_t i=1; i <= n; i++) {
+            value *= value;
+        }
+        return value;
     }
-    return result;
 }
 
 uint64_t fact(uint16_t n) {
