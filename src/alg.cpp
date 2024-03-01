@@ -50,10 +50,12 @@ double cosn(double x, uint16_t count) {
     bool flag = true;
     for (uint16_t i = 1; i <= count; i++) {
         if (flag) {
-            result += calcItem(x, 2*i-2)*pown(-1, i-1);
+            result += pown(-1, i)*pown(x, 2*i)/fact(2*i);/*
+            result += calcItem(x, 2*i-2)*pown(-1, i-1);*/
             flag = false;
         } else {
-            result += calcItem(x, 2*i-2)*pown(-1, i-1);
+            result += pown(-1, i)*pown(x, 2*i)/fact(2*i);/*
+            result += calcItem(x, 2*i-2)*pown(-1, i-1);*/
             flag = true;
         }
     }
