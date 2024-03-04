@@ -32,30 +32,16 @@ double expn(double x, uint16_t count) {
 
 double sinn(double x, uint16_t count) {
     long double result = 0;
-    bool flag = true;
     for (uint16_t i = 1; i <= count; i++) {
-        if (flag) {
-            result += calcItem(x, 2*i-1)*pown(-1, i-1);
-            flag = false;
-        } else {
-            result += calcItem(x, 2*i-1)*pown(-1, i-1);
-            flag = true;
-        }
+        result += calcItem(x, 2*i-1)*pown(-1, i-1);
     }
     return result;
 }
 
 double cosn(double x, uint16_t count) {
-    long double result = 0;
-    bool flag = true;
+    long double result;
     for (uint16_t i = 1; i <= count; i++) {
-        if (flag) {
-            result += calcItem(x, 2*i-2)*pown(-1, i-1);
-            flag = false;
-        } else {
-            result += calcItem(x, 2*i-2)*pown(-1, i-1);
-            flag = true;
-        }
+        result += calcItem(x, 2*i-2)*pown(-1, i-1);
     }
     return result;
 }
