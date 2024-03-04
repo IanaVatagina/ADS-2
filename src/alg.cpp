@@ -31,7 +31,7 @@ double expn(double x, uint16_t count) {
 }
 
 double sinn(double x, uint16_t count) {
-    long double result = 0;
+    long double result = 0.0;
     for (uint16_t i = 1; i <= count; i++) {
         result += calcItem(x, 2*i-1)*pown(-1, i-1);
     }
@@ -39,9 +39,9 @@ double sinn(double x, uint16_t count) {
 }
 
 double cosn(double x, uint16_t count) {
-    long double result;
+    long double result = 0.0;
     for (uint16_t i = 1; i <= count; i++) {
-        result += calcItem(x, 2*i-2)*pown(-1, i-1);
+        result += pown(x, 2*i-2)*pown(-1, i-1)/fact((2*i-2));
     }
     return result;
 }
