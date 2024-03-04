@@ -3,7 +3,7 @@
 
 
 double pown(double value, uint16_t n) {
-    long double result = 1;
+    double result = 1;
     for (uint64_t i=1; i <= n; i++) {
         result *= value;
     }
@@ -41,7 +41,7 @@ double sinn(double x, uint16_t count) {
 double cosn(double x, uint16_t count) {
     double result = 0.0;
     for (uint64_t i = 1; i <= count; i++) {
-        result += calcItem(x, 2 * i)*pown(-1, i);
+        result += calcItem(x, 2 * i - 2)*pown(-1, i-1);
     }
     return result;
 }
