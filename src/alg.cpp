@@ -31,17 +31,17 @@ double expn(double x, uint16_t count) {
 }
 
 double sinn(double x, uint16_t count) {
-    long double result = 0.0;
+    double result = 0.0;
     for (uint64_t i = 1; i <= count; i++) {
-        result += calcItem(x, (2 * i) - 1)*pown(-1, i-1);
+        result += calcItem(x, 2 * i - 1)*pown(-1, i-1);
     }
     return result;
 }
 
 double cosn(double x, uint16_t count) {
-    long double result = 0.0;
+    double result = 0.0;
     for (uint64_t i = 1; i <= count; i++) {
-        result += calcItem(x, (2 * i) - 2)*pown(-1, i-1);
+        result += calcItem(x, 2 * i - 2)*pown(-1, i-1);
     }
     return result;
 }
